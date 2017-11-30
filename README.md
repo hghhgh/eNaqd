@@ -1,6 +1,15 @@
-# DOCUMENTATION:
-Please read the documentation here: http://bit.ly/ionicthemes-enaqd
+# eNaqd
+This app is a wordpress based persian (farsi) social app like Instagram written with ionic v1.
+It uses wordpress as its server and works with wordpress json api v2.
 
+In this app you can take picture of things and write a review about it.
+People who see you review can vote it and write its own reviews about it.
+
+In fact the app integrates with wordpress and provide mobile app for your wordpress web site. 
+
+
+# Ionic related documentation:
+To run the app, follow the instruction below :
 
 ### To prepare the apk to upload to Google Play (see: http://ionicframework.com/docs/guide/publishing.html)
 
@@ -55,7 +64,3 @@ ionic package <MODE> <PLATFORM>
 ```
 ionic resources
 ```
-
-For more help use ```ionic --help``` or visit the Ionic docs: http://ionicframework.com/docs
-"# ionic WordpressIntegrate" 
-# eNaqd
