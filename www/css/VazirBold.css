@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'VazirBold';
+    src: url('fonts/VazirBold.eot');
+    src: url('fonts/VazirBold.eot') format('embedded-opentype'),
+         url('fonts/VazirBold.woff2') format('woff2'),
+         url('fonts/VazirBold.woff') format('woff'),
+         url('fonts/VazirBold.ttf') format('truetype'),
+         url('fonts/VazirBold.svg#VazirBold') format('svg');
+}

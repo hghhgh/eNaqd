@@ -1,0 +1,34 @@
+<ion-view class="settings-view">
+  <ion-nav-title>
+    <span>تنظیمات</span>
+  </ion-nav-title>
+  <ion-content>
+    <ul class="list">
+
+      <!--<ion-toggle ng-model="notifications" toggle-class="toggle-dark">قابلیت Push Notifications</ion-toggle>-->
+      <!--<ion-toggle ng-model="sendLocation" toggle-class="toggle-dark">ارسال مکان</ion-toggle>-->
+      <a class="item option" ng-controller="SettingCtrl">
+        <span class="title">خوش آمدید : {{username}}</span>
+      </a>
+
+      <div class="item item-divider">تنظیمات</div>
+      <a class="item option" ng-controller="RateAppCtrl" ng-click="rateApp()">
+        <i class="icon ion-heart assertive"></i>
+        <span class="title">امتیاز دهی به برنامه</span>
+      </a>
+
+      <div class="item item-divider">عناوین مرتبط</div>
+
+      <a class="item" href="" ng-click="showTerms()">قوانین استفاده از نرم افزار</a>
+      <a class="item" href="" ng-click="showFAQS()">سئوالات متداول</a>
+      <a class="item" href="" ng-click="showCredits()">تولید کنندگان</a>
+
+      <div class="item item-divider">حساب شما</div>
+      <a class="item option" ng-click="showLogOutMenu()">
+        <i class="icon ion-power"></i>
+        <span class="title">خروج از حساب</span>
+      </a>
+
+    </ul>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,48 @@
+// Include Sass mixins
+@import "scss/utils/mixins";
+
+// Include Theme variables
+@import "scss/common/theme.variables";
+// Include Ionic override variables
+@import "scss/utils/override_variables";
+
+// Include Bourbon
+@import "www/lib/bourbon/app/assets/stylesheets/_bourbon";
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+// Include Ionic override styles
+@import "scss/utils/override_styles";
+
+// Include project Sass variables
+@import "scss/common/common.variables";
+@import "scss/auth/auth.variables";
+@import "scss/mainmenu/main-menu.variables";
+@import "scss/bookmarks/bookmarks.variables";
+@import "scss/wordpress/wordpress.variables";
+@import "scss/multimenu/multi-level-push-menu.variables";
+@import "scss/settings/settings.variables";
+@import "scss/contact/contact.variables";
+
+// Include custom styles
+@import "scss/common/common.styles";
+
+@import "scss/auth/auth.styles";
+@import "scss/auth/walkthrough.styles";
+@import "scss/auth/login.styles";
+@import "scss/auth/register.styles";
+@import "scss/auth/forgot-password.styles";
+
+@import "scss/mainmenu/main-menu.styles";
+@import "scss/multimenu/wp-search.styles";
+@import "scss/multimenu/multi-level-push-menu.styles";
+
+@import "scss/wordpress/wordpress.styles";
+@import "scss/wordpress/post.styles";
+@import "scss/wordpress/page.styles";
+
+@import "scss/bookmarks/bookmarks.styles";
+@import "scss/settings/settings.styles";
+@import "scss/contact/contact.styles";
+
+$font-family-base: "Vazir", sans-serif !default;

@@ -1,0 +1,51 @@
+.contact-view
+{
+  font-family: Vazir !important;
+  .contact-content
+  {
+    padding: 20px;
+  }
+
+  .send-email
+  {
+    margin-top:30px;
+  }
+
+  .contact-details-item
+  {
+    margin:30px 0px;
+  }
+
+  .social-networks
+  {
+    text-align: center;
+    font-size: 24px;
+
+    .twitter-icon
+    {
+      color: #37b9e1;
+    }
+    .facebook-icon
+    {
+      color: #3e649e;
+    }
+    .dribbble-icon
+    {
+      color: #e36a96;
+    }
+    .rss-icon
+    {
+      color: #f18334;
+    }
+    .pinterest-icon
+    {
+      color: #c6484a;
+    }
+  }
+
+  .featured
+  {
+    color: $featured-color;
+    border-color: $featured-color;
+  }
+}

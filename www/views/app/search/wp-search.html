@@ -1,0 +1,19 @@
+<div class="wp-search">
+	<div class="search-box-wrapper">
+		<div class="bar bar-header item-input-inset">
+			<label class="item-input-wrapper">
+				<i class="icon ion-search placeholder-icon"></i>
+				<input style="direction: rtl; padding: 0 !important;" type="search" ng-model="query" placeholder="جستجو کنید ..." search-input>
+			</label>
+			<button ng-click="closeSearch($event)" class="button button-assertive button-icon icon ion-close-circled"></button>
+		</div>
+	</div>
+	<search-results>
+		<my-tab title="پست ها" tabid="posts" query="{{query}}">
+		</my-tab>
+		<my-tab title="تگ ها" tabid="tags" query="{{query}}">
+		</my-tab>
+		<my-tab title="نویسندگان" tabid="authors" query="{{query}}">
+		</my-tab>
+	</search-results>
+</div>

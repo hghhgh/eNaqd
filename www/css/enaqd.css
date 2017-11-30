@@ -1,0 +1,52 @@
+/* ng tag input customization*/
+
+tags-input .tags{
+    border: 0px solid darkgray !important;
+    box-shadow: 0px 0px 0px 0 lightgray inset !important;
+
+
+}
+tags-input .tags .input{
+    float: right !important;
+    font-family: VazirLight, sans-serif !important;
+}
+
+tags-input .tags .tag-item {
+    float: right !important;
+    /*background: -webkit-linear-gradient(top, #eeeeee 0%, #dddddd 47%, #eeeeee 100%) !important;*/
+    /*background: linear-gradient(to bottom, #eeeeee 0%, #dddddd 47%, #eeeeee 100%) !important;*/
+/*background-color: #dddddd !important;*/
+    background: #dddddd !important;
+    font-family: VazirLight, sans-serif !important;
+}
+
+tags-input .autocomplete{
+bottom: 36px;
+
+}
+tags-input .autocomplete .suggestion-item {
+    font-family: VazirLight, sans-serif !important;
+}
+tags-input .autocomplete .suggestion-item em{
+    font-family: VazirLight, sans-serif !important;
+
+}
+
+tags-input .autocomplete .suggestion-item.selected {
+    color: #fff;
+    background-color: #777777;
+}
+tags-input .autocomplete .suggestion-item.selected em {
+    color: #fff;
+    background-color: #777777;
+}
+
+/* spinner */
+.spinner-inline svg{
+    height: 10px;
+    width: 10px;
+}
+
+ion-item.item{
+    padding: 6px !important;
+}

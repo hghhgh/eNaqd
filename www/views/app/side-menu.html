@@ -1,0 +1,130 @@
+<ion-side-menus enable-menu-with-back-views="false">
+    <ion-nav-bar class="bar app-top-bar FVazirBold" dir="ltr" align-title="center"  ng-click="slideRight()">
+        <ion-nav-back-button>
+        </ion-nav-back-button>
+        <ion-nav-buttons side="right">
+            <button class="button button-icon button-clear ion-plus" ng-click="slideLeft()">
+            </button>
+        </ion-nav-buttons>
+        <ion-nav-buttons side="left">
+            <button class="button button-icon button-clear ion-search" menu-toggle="left">
+            </button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-side-menu-content class="post-size-14px" dir="rtl">
+
+        <!--<ion-content scroll="false" has-bouncing="false"  scroll="false">-->
+        <ion-content scroll="false" has-bouncing="false">
+            <ion-slides options="data.sliderOptions" slider="data.sliderDelegate" ion-did-change="slidechanged()">
+                <ion-slide-page class="main-menu">
+                    <ion-content scroll="false" ng-controller="CamCtrl">
+                        <ion-content class="new-post" name="newpostpage">
+                            <div class="pagetitle FVazirBold"> نقد کنید :</div>
+
+                            <input class="nptitle FVazirBold" type="text" placeholder="عنوان ..."
+                                   ng-model="newpost.title" required ng-focus="tfocus=true" ng-blur="tfocus=false"
+                                   ng-class="{focused: tfocus}" ng-change="formchanged()"></input>
+                            <img ng-src="{{imgURI}}" height="{{pic_h}}px"
+                                 ng-style="campicstyle" alt="تصویر مطلب شما">
+                            <div style="margin: 10px 0 10px 0;">
+                                <button class="button button-calm FVazir" ng-click="takeImage() ">عکس
+                                    جدید
+                                </button>
+                                <button class="button button-calm FVazir" ng-click="pickImage() ">
+                                    انتخاب عکس
+                                </button>
+                            </div>
+                            <textarea rows="3" class="npcontent FVazirLight" type="text" placeholder="متن ..."
+                                      ng-model="newpost.content" required ng-focus="cfocus=true" ng-blur="cfocus=false"
+                                      ng-class="{focused: cfocus}" ng-change="formchanged()"></textarea>
+                            <tags-input data-tap-disabled="true" ng-model="newpost.Tags" load-on-empty="true"
+                                        load-on-focus="true" load-on-down-arrow="true" placeholder="تگ ...">
+                                <auto-complete minlength="3" source="loadTags($query)"></auto-complete>
+                            </tags-input>
+                            <!--<br>-->
+                            <fancy-select
+                                    header-text="دسته ها"
+                                    items="allcategories"
+                                    value="selected"
+                                    icon-property="icon"
+                                    value-property="id"
+                                    text-property="name"
+                                    allow-empty='true'
+                                    multi-select="true"
+                                    text="دسته مربوطه را انتخاب کنید"
+                                    modal-template-url="views/app/templates/modal-template.html"
+                                    template-url="views/app/templates/item-template.html"
+                                    value-changed="onValueChanged(value)"
+                                    get-custom-text="getCustomText(value)"
+                            >
+                            </fancy-select>
+                            <p></p>
+
+                            <button class="button button-calm FVazir" ng-click="addPost()"
+                                    ng-if="!newpost.submited">ارسال
+                            </button>
+                            <button class="button button-balanced icon ion-checkmark-round" ng-click="formchanged()"
+                                    ng-if="newpost.submited">
+                            </button>
+                            <!--<span>here : {{imgURI}}</span>-->
+                        </ion-content>
+                    </ion-content>
+                </ion-slide-page>
+                <ion-slide-page>
+
+                    <!--<ion-tabs class="tabs-positive tabs-icon-only">-->
+                    <ion-tabs tabs-style="tabs-icon-only" tabs-type="tabs-positive" animation="slide-left-right">
+
+                        <ion-tab title="خانه" icon-on="ion-ios-home" icon-off="ion-ios-home-outline" ui-sref="app.home">
+                            <ion-nav-view name="menuContent"></ion-nav-view>
+                        </ion-tab>
+
+                        <ion-tab title="ذخیره شده ها" icon-on="ion-ios-bookmarks" icon-off="ion-ios-bookmarks-outline"
+                                 ui-sref="app.bookmarks">
+                            <ion-nav-view name="menuContentBookmarks"></ion-nav-view>
+                        </ion-tab>
+
+                        <!--<ion-tab title="صفحات" icon-on="ion-ios-list" icon-off="ion-ios-list-outline"-->
+                        <!--ui-sref="app.pages">-->
+                        <!--<ion-nav-view name="menuContentPages"></ion-nav-view>-->
+                        <!--</ion-tab>-->
+                        <ion-tab title="تماس" icon-on="ion-ios-telephone" icon-off="ion-ios-telephone-outline"
+                                 ui-sref="app.contact">
+                            <ion-nav-view name="menuContentContact"></ion-nav-view>
+                        </ion-tab>
+                        <ion-tab title="تنظیمات" icon-on="ion-ios-gear" icon-off="ion-ios-gear-outline"
+                                 ui-sref="app.settings">
+                            <ion-nav-view name="menuContentsettings"></ion-nav-view>
+                        </ion-tab>
+
+                    </ion-tabs>
+                </ion-slide-page>
+                <!--<ion-slide-page ng-controller="PushMenuCtrl" class="multi-level-push-menu">-->
+                <!--<ion-content has-bouncing="false" scroll="false">-->
+                <!--<wp-search>-->
+                <!--</wp-search>-->
+                <!--<push-menu menu="menu"></push-menu>-->
+                <!--</ion-content>-->
+                <!--</ion-slide-page>-->
+            </ion-slides>
+        </ion-content>
+
+
+    </ion-side-menu-content>
+
+    <!--<ion-side-menu class="main-menu" side="right" width="{{menu_width}}">-->
+
+    <!--</ion-side-menu>-->
+
+    <ion-side-menu class="multi-level-push-menu" side="left" ng-controller="PushMenuCtrl">
+        <ion-content has-bouncing="false" scroll="false">
+            <wp-search>
+            </wp-search>
+            <div class="row-center">
+                <button class="button button-full FVazirBold" style="margin: 0 !important;font-weight: bolder;" menu-close ng-click="gotoHome()"> صفحه نخست
+                </button>
+            </div>
+            <push-menu menu="menu"></push-menu>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

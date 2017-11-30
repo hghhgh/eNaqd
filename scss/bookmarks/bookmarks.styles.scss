@@ -1,0 +1,95 @@
+.bookmarks-view
+{
+  font-family: Vazir !important;
+
+  background-color: $content-bg;
+
+  .scroll-content .scroll,
+  .bookmarks-container
+  {
+    height:100%;
+  }
+
+  .empty-results
+  {
+    text-align: center;
+
+    .icon
+    {
+      font-size: 170px;
+      color: lighten($content-bg, 10);
+    }
+
+    .no-bookmarks
+    {
+      color: darken($content-bg, 10);
+      font-size: 22px;
+    }
+  }
+
+
+  .bookmarks-list
+  {
+    overflow-y:scroll;
+    height:100%;
+  }
+
+  // Fix scrollbar style introduced on ionic v1rc1
+  .bookmarks-list::-webkit-scrollbar
+  {
+    display: none !important;
+    width: 0 !important;
+  }
+
+  .bookmark-item
+  {
+    padding: 0 !important;
+
+    *
+    {
+      text-decoration:none;
+      color: $content-color;
+    }
+
+    .post-title
+    {
+      margin:0px;
+      font-size: 20px;
+      font-weight: 300;
+      letter-spacing: -1px;
+    }
+
+    .post-date
+    {
+      margin:0px;
+      font-size: 12px;
+      font-weight: 200;
+      color: rgba(lighten($content-color, 10), .7);
+    }
+
+    .post-time
+    {
+      color: rgba(darken($content-color, 10), .9);
+    }
+
+    .remove-button
+    {
+      background-color: $bookmarks-remove-bg;
+      color: $bookmarks-remove-color;
+      border-radius: 0;
+      height: 56px;
+      line-height: 56px;
+      margin-left: 20px;
+    }
+
+    .item-content{
+      padding: 0 !important;
+    }
+    .pull-right {
+      float: right !important;
+    }
+    .pull-left {
+      float: left !important;
+    }
+  }
+}

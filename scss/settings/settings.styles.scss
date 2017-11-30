@@ -1,0 +1,63 @@
+.settings-view
+{
+  font-family: Vazir !important;
+  background-color: $content-bg;
+
+  .option
+  {
+    i
+    {
+      margin-right:12px;
+      font-size: 18px;
+    }
+  }
+
+  .item-divider
+  {
+    padding-top: 22px;
+    padding-bottom: 6px;
+    color: lighten($content-color, 30);
+    font-weight: 400;
+  }
+}
+
+.terms-of-service
+{
+  font-family: Vazir, sans-serif;
+  padding: 20px;
+  text-align: justify;
+
+  .title{
+    margin-top: 30px;
+  }
+}
+
+.credits
+{
+  padding: 20px;
+  text-align: justify;
+}
+
+.faqs
+{
+  padding: 20px;
+  text-align: justify;
+
+  .faq-item
+  {
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid lighten($content-color, 60);
+  }
+}
+
+.action-sheet{
+  direction: rtl;
+  font-family: Vazir !important;
+  .action-sheet-title {
+    text-align: right !important;
+  }
+  .button{
+    text-align: center !important;
+  }
+}

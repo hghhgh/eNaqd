@@ -1,0 +1,10 @@
+// Walkthrough colors
+$error-color: #EF473A;
+$walkthrough-bg: lighten($theme-color-1, 10);
+$walkthrough-color: #000000;
+
+$walkthrough-btn-bg-1: #000000;
+$walkthrough-btn-color-1: darken($theme-color-1, 15%);
+
+$walkthrough-btn-bg-2: darken($theme-color-1, 15%);
+$walkthrough-btn-color-2: #000000;

@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'VazirLight';
+    src: url('fonts/VazirLight.eot');
+    src: url('fonts/VazirLight.eot') format('embedded-opentype'),
+         url('fonts/VazirLight.woff2') format('woff2'),
+         url('fonts/VazirLight.woff') format('woff'),
+         url('fonts/VazirLight.ttf') format('truetype'),
+         url('fonts/VazirLight.svg#VazirLight') format('svg');
+}

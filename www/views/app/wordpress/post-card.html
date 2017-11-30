@@ -1,0 +1,52 @@
+<div class="card-header">
+    <h1 ng-bind-html="post.title.rendered | rawHtml"></h1>
+</div>
+<div class="card-content-outer" post-content>
+    <img style="width: 100%;" ng-src="{{post.better_featured_image.source_url}}">
+    <!--<div style="float: right; position: relative; height: 0; bottom: 30px; width: 100%; text-align: center;">-->
+    <div style=" bottom: 30px; width: 100%; text-align: center;">
+        <h2> <span> {{post.date  | tojalali:"jYYYY/jMM/jDD ساعت H:mm" | pNumber}}</span> توسط <span ng-show="post.author.displayname"
+                                                               class="author">{{post.author.displayname}}</span>
+            <ion-spinner class="spinner-inline" ng-show="!post.author.displayname" icon="ripple"></ion-spinner>
+        </h2>
+    </div>
+    <!--<div class="card-content" dynamic-anchor-fix ng-bind-html="post.content | rawHtml"></div>-->
+</div>
+<div class="card-footer">
+    <!--<a class="card-button secondary" ng-click="sharePost(post.url)">اشتراک گذاری</a>-->
+    <a class="button button-clear primary" ui-sref="app.post({postId :post.id})">ادامه مطلب</a>
+    <a ng-show="post.comment_count > 0" class="button button-clear comments" ui-sref="app.post({postId :post.id})">
+        <i class="icon ion-chatbox"></i>
+        {{post.comment_count | pNumber}}
+    </a>
+
+
+    <span class="pull-left">
+                <span class="likebtn-wrapper lb-loaded lb-style-google lb-popup-position-top lb-popup-style-light">
+                    <span class="likebtn-button lb-like " ng-class="{'lb-voted': post.votedt.user_vote==='1'}">
+
+                        <ion-spinner class="spinner-inline"
+                                     ng-show="!post.votedt || post.votingfor==='uploading'"
+                                     icon="ripple"></ion-spinner>
+
+                        <span ng-show="post.votingfor === 'done'"
+                              class="lb-a" ng-click="voteopt(post,post.votedt.post_voter_links.up)">
+                                                        <span class="likebtn-icon lb-like-icon">&nbsp;</span>
+                        </span>
+                        <span class="lb-count">{{post.votedt.total_up | pNumber}}</span>
+                    </span>
+                    <span class="likebtn-button lb-dislike " ng-class="{'lb-voted': post.votedt.user_vote==='-1'}">
+
+                        <ion-spinner class="spinner-inline"
+                                     ng-show="!post.votedt || post.votingfor==='uploading'"
+                                     icon="ripple"></ion-spinner>
+
+                        <span ng-show="post.votingfor === 'done'"
+                              class="lb-a" ng-click="voteopt(post,post.votedt.post_voter_links.down)">
+                                        <span class="likebtn-icon lb-dislike-icon">&nbsp;</span>
+                                    </span>
+                        <span class="lb-count">{{post.votedt.total_down | pNumber}}</span>
+                    </span>
+                </span>
+    </span>
+</div>

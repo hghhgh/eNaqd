@@ -1,0 +1,97 @@
+<ion-view class="post-view" cache-view="false">
+    <ion-nav-title style="direction: rtl;">
+        <span ng-bind-html="post.title.rendered | rawHtml"></span>
+    </ion-nav-title>
+    <ion-content>
+
+        <ion-content>
+            <div class="post-actions">
+                <a class="button button-positive primary " ng-click="sharePost(post.url)"
+                   style="background-color: transparent !important;">
+                    <i class="icon ion-android-share-alt"></i>
+                </a>
+                <a class="button button-positive secondary bookmark " ng-click="bookmarkPost(post)"
+                   style="background-color: transparent !important;">
+                    <i class="icon ion-bookmark"></i>
+                </a>
+
+                <!--<span ng-show="post.comment_count > 0" class="button button-positive comment-count  pull-left"-->
+                <!--style="background-color: transparent !important;">-->
+                <!--<i class="icon ion-chatbox"></i>{{post.comment_count}}-->
+                <!--</span>-->
+
+                <span class="pull-left likebtn-wrapper lb-loaded lb-style-google lb-popup-position-top lb-popup-style-light ">
+                    <span class="likebtn-button lb-like " ng-class="{'lb-voted': post.votedt.user_vote==='1'}">
+
+                        <ion-spinner class="spinner-inline"
+                                     ng-show="!post.votedt || post.votingfor==='uploading'"
+                                     icon="ripple"></ion-spinner>
+
+                        <span ng-show="post.votingfor === 'done'"
+                              class="lb-a" ng-click="voteopt(post,post.votedt.post_voter_links.up)">
+                                                        <span class="likebtn-icon lb-like-icon">&nbsp;</span>
+                        </span>
+                        <span class="lb-count">{{post.votedt.total_up | pNumber}}</span>
+                    </span>
+                    <span class="likebtn-button lb-dislike " ng-class="{'lb-voted': post.votedt.user_vote==='-1'}">
+
+                        <ion-spinner class="spinner-inline"
+                                     ng-show="!post.votedt || post.votingfor==='uploading'"
+                                     icon="ripple"></ion-spinner>
+
+                        <span ng-show="post.votingfor === 'done'"
+                              class="lb-a" ng-click="voteopt(post,post.votedt.post_voter_links.down)">
+                                        <span class="likebtn-icon lb-dislike-icon">&nbsp;</span>
+                                    </span>
+                        <span class="lb-count">{{post.votedt.total_down | pNumber}}</span>
+                    </span>
+                </span>
+
+            </div>
+            <div class="post" post-content>
+                <div class="card-header">
+                    <!--<h1 ng-bind-html="post.title | rawHtml"></h1>-->
+                    <img style="width: 100%;" ng-src="{{post.better_featured_image.source_url}}">
+
+                    <div style=" bottom: 30px; width: 100%; text-align: center;">
+                        <h2><span> {{post.date  | tojalali:"jYYYY/jMM/jDD ساعت H:mm" | pNumber}}</span> توسط <span
+                                ng-show="post.author.displayname"
+                                class="author">{{post.author.displayname}}</span>
+                            <ion-spinner class="spinner-inline" ng-show="!post.author.displayname"
+                                         icon="ripple"></ion-spinner>
+                        </h2>
+                    </div>
+                </div>
+                <div class="card-content" dynamic-anchor-fix ng-bind-html="post.content.rendered | rawHtml"></div>
+            </div>
+
+            <div class="comments" style="text-align: center">
+                <ion-spinner ng-show="!comments" icon="ripple"></ion-spinner>
+
+                <div class="list" style="text-align: justify" ng-show="comments">
+                    <div class="item item-avatar" ng-repeat="comment in comments"
+                         ng-class="{highlighted: comment.id === new_comment_id}">
+                        <img ng-src="{{comment.author_avatar_urls['48']}}">
+                        <h2 ng-bind-html="comment.author_name | rawHtml"><span class="comment-date"
+                                                                               am-time-ago="comment.date"></span></h2>
+                        <p class="message-content" ng-bind-html="comment.content.rendered | rawHtml"></p>
+                    </div>
+                </div>
+            </div>
+        </ion-content>
+        <ion-footer-bar class="new-comment post-footer bar bar-footer">
+            <form name="comment_form" class="row" novalidate>
+                <div class="col col-80 content col-center">
+                    <input ng-model="post.new_comment" class="new-comment-message FVazirLight" type="text"
+                           placeholder="نظر بگذارید ..." required/>
+                </div>
+                <div class="col col-20 button-container col-center">
+                    <button class="button button-clear send FVazirBold" type="submit" ng-click="addComment()"
+                            ng-disabled="comment_form.$invalid">
+                        ارسال
+                    </button>
+                </div>
+            </form>
+        </ion-footer-bar>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,26 @@
+<ion-modal-view id="catmodal">
+    <ion-header-bar class="bar-positive">
+        <button class="button button-positive button-icon ion-checkmark" ng-show="multiSelect" ng-click="validate()"/>
+        <h1 class="title title-right">{{headerText}}</h1>
+        <button class="button button-positive button-icon ion-ios-arrow-forward" ng-click="hideItems()"/>
+    </ion-header-bar>
+
+    <ion-content style="direction: rtl">
+        <ion-list>
+            <!--<ion-item class="item-checkbox" ng-if="multiSelect" ng-repeat="item in items">-->
+            <!--<label class="checkbox">-->
+            <!--<input type="checkbox" ng-checked="item.checked" ng-model="item.checked">-->
+            <!--</label>-->
+            <!--{{ $eval('item.' + textProperty) }}-->
+
+            <!--</ion-item>-->
+            <ion-toggle ng-checked="item.checked" ng-model="item.checked" toggle-class="toggle-calm" ng-if="multiSelect"
+                        ng-repeat="item in items">
+                {{ $eval('item.' + textProperty) }}
+            </ion-toggle>
+            <label class="item" ng-click="validate(item)" ng-if="!multiSelect" ng-repeat="item in items">
+                {{ $eval('item.' + textProperty) }}
+            </label>
+            <ion-list>
+    </ion-content>
+</ion-modal-view>

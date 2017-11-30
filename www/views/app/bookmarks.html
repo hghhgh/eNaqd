@@ -1,0 +1,33 @@
+<ion-view class="bookmarks-view">
+    <ion-nav-title>
+        <span>ذخیره شده ها</span>
+    </ion-nav-title>
+    <ion-content>
+        <div class="row bookmarks-container">
+            <div ng-if="bookmarks.length == 0" class="col col-center">
+                <div class="empty-results">
+                    <i class="icon ion-bookmark"></i>
+                    <h3 class="no-bookmarks">فعلا چیزی ثبت نشده !</h3>
+                </div>
+            </div>
+            <div ng-if="bookmarks.length > 0" class="col">
+                <!--<ion-list class="bookmarks-list" can-swipe="true" style="direction: rtl;">-->
+                <ion-list class="bookmarks-list">
+                    <ion-item class="bookmark-item" ng-repeat="bookmark in bookmarks">
+                        <!--<div>-->
+                        <ion-button class="button remove-button pull-right" ng-click="remove(bookmark.id)">حذف</ion-button>
+                        <!--</div>-->
+                        <div style="padding: 6px;">
+                        <a ui-sref="app.post({postId : bookmark.id})">
+                            <h2 class="post-title" ng-bind-html="bookmark.title.rendered | rawHtml"></h2>
+                            <p class="post-date">ارسال شده در<span> {{bookmark.date | tojalali:"jYYYY/jMM/jDD ساعت H:mm" | pNumber}}</span>
+                            </p>
+                        </a>
+                        </div>
+                        <!--<ion-option-button class="remove-button" ng-click="remove(bookmark.id)">حذف</ion-option-button>-->
+                    </ion-item>
+                </ion-list>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
