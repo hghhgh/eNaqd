@@ -7,9 +7,10 @@ People who see you review can vote it and write its own reviews about it.
 
 In fact the app integrates with wordpress and provide mobile app for your wordpress web site. 
 
-Note : your wordpress site should be configure properly to work fine with the app.
- For more info use screenshot and files in 'wp_needed files' folder.
- The screenshot of the app can be found [here](https://github.com/hghhgh/eNaqd/tree/master/screenshots).
+Note : 
+1. your wordpress site should be configure properly to work fine with the app.
+2. For more info use screenshot and files in 'wp_needed files' folder.
+3. The screenshot of the app can be found [here](https://github.com/hghhgh/eNaqd/tree/master/screenshots).
 
 
 # Ionic related documentation:
